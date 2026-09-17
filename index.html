@@ -1,1756 +1,659 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VitaLink | Ecosistema de Monitoreo Preventivo & Cuidado Integral para Adultos Mayores</title>
-  <meta name="description" content="VitaLink conecta a adultos mayores, familiares y centros de salud en un ecosistema de monitoreo preventivo continuo, detección temprana de riesgos y atención médica inmediata. Desarrollado por CodeBrokers." />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  
-  <!-- Tailwind CSS 3 via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              200: '#bfdbfe',
-              300: '#93c5fd',
-              400: '#60a5fa',
-              500: '#0284c7',
-              600: '#0369a1',
-              700: '#075985',
-              800: '#0c4a6e',
-              900: '#082f49',
-            },
-            tealbrand: {
-              50: '#f0fdfa',
-              100: '#ccfbf1',
-              500: '#0d9488',
-              600: '#0f766e',
-              700: '#115e59',
-            },
-            emeraldbrand: {
-              500: '#10b981',
-              600: '#059669',
-            }
-          },
-          fontFamily: {
-            heading: ['Outfit', 'sans-serif'],
-            body: ['Plus Jakarta Sans', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <title>PulsePower | Physiological Intelligence & Wellness</title>
+  <meta name="description" content="PulsePower turns your sleep, strain and recovery data into clear insights to help you plan your training, rest and everyday wellbeing." />
+  <link rel="icon" type="image/svg+xml" href="public/assets/images/pulsepower-logo.svg" />
 
-  <!-- Font Awesome Icons -->
+  <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="public/assets/styles/style.css" />
 </head>
+<body>
 
-<body class="bg-slate-50 text-slate-800 antialiased font-body selection:bg-sky-600 selection:text-white">
+  <!-- ================= Header & Navbar ================= -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo">
+        <img src="public/assets/images/pulsepower-logo.svg" alt="PulsePower Logo" />
+      </a>
 
-  <!-- ==========================================================================
-       Top Announcement Bar
-       ========================================================================== -->
-  <div class="bg-gradient-to-r from-sky-900 via-sky-800 to-teal-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2 relative z-50">
-    <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-2 py-0.5 rounded-full text-xs font-semibold">Nuevo</span>
-    <span>Ecosistema de Salud Digital desarrollado por <strong>CodeBrokers</strong> • Monitoreo preventivo y respuesta coordinada</span>
-    <a href="#simulador" class="underline underline-offset-2 hover:text-sky-200 transition-colors ml-1 hidden sm:inline">Probar Simulador →</a>
-  </div>
-
-  <!-- ==========================================================================
-       Header & Navigation
-       ========================================================================== -->
-  <header id="main-header" class="fixed top-8 sm:top-9 left-0 right-0 z-40 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20 glass-panel rounded-2xl px-6 my-2 shadow-sm border border-slate-200/80">
-        
-        <!-- Logo -->
-        <a href="#inicio" class="flex items-center gap-3 group">
-          <img src="assets/logo.svg" alt="Logo VitaLink" class="h-10 w-auto" />
-        </a>
-
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
-          <a href="#inicio" class="hover:text-sky-600 transition-colors nav-item">Inicio</a>
-          <a href="#problematica" class="hover:text-sky-600 transition-colors nav-item">Solución</a>
-          <a href="#funcionalidades" class="hover:text-sky-600 transition-colors nav-item">Pilares</a>
-          <a href="#simulador" class="hover:text-sky-600 transition-colors text-sky-600 flex items-center gap-1.5 nav-item">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-            Simulador
-          </a>
-          <a href="#segmentos" class="hover:text-sky-600 transition-colors nav-item">Segmentos</a>
-          <a href="#como-funciona" class="hover:text-sky-600 transition-colors nav-item">Cómo Funciona</a>
-          <a href="#planes" class="hover:text-sky-600 transition-colors nav-item">Planes</a>
-          <a href="#equipo" class="hover:text-sky-600 transition-colors nav-item">Equipo</a>
+      <div class="nav-center-wrapper">
+        <nav class="nav-links">
+          <a href="#features" data-i18n="nav.features">Features</a>
+          <a href="#services" data-i18n="nav.benefits">Benefits</a>
+          <a href="#about" data-i18n="nav.about">About Us</a>
+          <a href="#team" data-i18n="team.heading">Our Team</a>
+          <a href="#plans" data-i18n="nav.plans">Plans</a>
         </nav>
+      </div>
 
-        <!-- Header Actions -->
-        <div class="hidden sm:flex items-center gap-3">
-          <!-- Accessibility Senior Mode Button -->
-          <button id="btn-senior-mode" class="flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 transition-all shadow-sm" title="Activar tipografía grande y alto contraste">
-            <i class="fas fa-eye text-sky-600"></i>
-            <span id="senior-mode-status">Modo Senior</span>
-          </button>
-
-          <!-- Request Demo CTA -->
-          <a href="#contacto" class="btn-senior inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-700 hover:to-teal-700 shadow-md hover:shadow-lg transition-all">
-            <i class="fas fa-calendar-check"></i>
-            <span>Solicitar Demo</span>
-          </a>
+      <div class="nav-actions">
+        <!-- Bilingual Switcher Toggle in Navbar (Figma style) -->
+        <div class="navbar-lang-switch" title="Cambiar idioma / Switch language">
+          <span class="lang-opt" data-lang="en">EN</span>
+          <div class="switch-track">
+            <div class="switch-thumb"></div>
+          </div>
+          <span class="lang-opt active" data-lang="es">ES</span>
         </div>
 
-        <!-- Mobile Hamburger Button -->
-        <button id="mobile-menu-toggle" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:text-sky-600 hover:bg-slate-100 transition-colors" aria-label="Abrir menú">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
+        <a href="#plans" class="btn-login" data-i18n="nav.login">Log In</a>
+        <a href="#plans" class="btn-signup" data-i18n="nav.signup">Sign Up</a>
 
+        <div id="menu-btn" class="fas fa-bars"></div>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
-  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white z-50 shadow-2xl p-6 transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
-    <div>
-      <div class="flex items-center justify-between pb-6 border-b border-slate-100">
-        <img src="assets/logo.svg" alt="VitaLink" class="h-8 w-auto" />
-        <button id="mobile-menu-close" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100">
-          <i class="fas fa-times text-lg"></i>
-        </button>
+  <!-- ================= Hero Section ================= -->
+  <section class="hero-section" id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-watermark" data-i18n="hero.watermark">HEALTH</div>
+
+    <div class="hero-grid">
+      <!-- Left Content -->
+      <div class="hero-left">
+        <span class="hero-tag" data-i18n="hero.tag">Transform Your Body, Optimize Your</span>
+        <h1 class="hero-title">
+          Pulse<span class="highlight-teal">Power</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          PulsePower turns your sleep, strain and recovery data into clear insights to help you plan your training and rest.
+        </p>
+        <a href="#services" class="hero-cta-btn">
+          <span data-i18n="hero.cta">Start Your Transformation</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
 
-      <nav class="flex flex-col gap-4 mt-6 text-base font-semibold text-slate-700">
-        <a href="#inicio" class="mobile-nav-link hover:text-sky-600 py-1">Inicio</a>
-        <a href="#problematica" class="mobile-nav-link hover:text-sky-600 py-1">Solución & Desafíos</a>
-        <a href="#funcionalidades" class="mobile-nav-link hover:text-sky-600 py-1">Pilares de VitaLink</a>
-        <a href="#simulador" class="mobile-nav-link text-sky-600 font-bold py-1 flex items-center justify-between">
-          <span>Simulador en Vivo</span>
-          <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-0.5 rounded-full">Interactuar</span>
-        </a>
-        <a href="#segmentos" class="mobile-nav-link hover:text-sky-600 py-1">Segmentos Objetivo</a>
-        <a href="#como-funciona" class="mobile-nav-link hover:text-sky-600 py-1">Cómo Funciona</a>
-        <a href="#planes" class="mobile-nav-link hover:text-sky-600 py-1">Planes & Precios</a>
-        <a href="#equipo" class="mobile-nav-link hover:text-sky-600 py-1">Startup CodeBrokers</a>
-        <a href="#faq" class="mobile-nav-link hover:text-sky-600 py-1">Preguntas Frecuentes</a>
-      </nav>
-    </div>
+      <!-- Center Athlete Image -->
+      <div class="hero-center">
+        <img src="public/assets/images/hero-athlete.svg" alt="Athletic training hero" class="hero-athlete-img" />
+      </div>
 
-    <div class="pt-6 border-t border-slate-100 space-y-3">
-      <button id="btn-senior-mode-mobile" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-slate-300 text-slate-700 font-bold text-sm bg-slate-50">
-        <i class="fas fa-eye text-sky-600"></i>
-        <span>Alternar Modo Senior</span>
-      </button>
-      <a href="#contacto" class="mobile-nav-link w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-white font-bold text-sm bg-sky-600 hover:bg-sky-700 text-center">
-        <i class="fas fa-calendar-check"></i>
-        <span>Solicitar Demostración</span>
+      <!-- Right Stat Card -->
+      <div class="hero-right">
+        <div class="hero-stat-card">
+          <h3 class="stat-card-title" data-i18n="hero.cardTitle">Sleep, strain and recovery</h3>
+          
+          <div class="avatar-bubbles">
+            <div class="avatar-bubble" style="background-image: url('public/assets/images/team-luis.svg');"></div>
+            <div class="avatar-bubble" style="background-image: url('public/assets/images/team-miroslav.svg');"></div>
+            <div class="avatar-bubble" style="background-image: url('public/assets/images/team-bruno.svg');"></div>
+          </div>
+
+          <div class="stat-badge">
+            <i class="fas fa-microchip"></i>
+            <span data-i18n="hero.cardBadge">AI Insights</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Marquee / Ticker Ribbon ================= -->
+  <div class="marquee-ribbon">
+    <div class="marquee-content">
+      <div class="marquee-item">
+        <span data-i18n="marquee.item1">Evidence-Based Coaching</span>
+        <div class="marquee-bullet"></div>
+      </div>
+      <div class="marquee-item">
+        <span data-i18n="marquee.item2">Hormone & Gut Health Optimization</span>
+        <div class="marquee-bullet"></div>
+      </div>
+      <div class="marquee-item">
+        <span data-i18n="marquee.item3">Physique Transformation Experts</span>
+        <div class="marquee-bullet"></div>
+      </div>
+      <div class="marquee-item">
+        <span data-i18n="marquee.item1">Evidence-Based Coaching</span>
+        <div class="marquee-bullet"></div>
+      </div>
+      <div class="marquee-item">
+        <span data-i18n="marquee.item2">Hormone & Gut Health Optimization</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Science-Backed Coaching Section ================= -->
+  <section class="science-section">
+    <div class="science-container">
+      <h2 class="section-title-large" data-i18n="science.title">
+        Science-Backed, Results Driven Coaching
+      </h2>
+      <p class="section-desc-medium" data-i18n="science.subtitle">
+        Turn your physiological data into clear guidance. Understand your habits and find a balance between activity and rest with insights tailored to you.
+      </p>
+      <a href="#team" class="btn-primary">
+        <span data-i18n="science.cta">Meet the Team</span>
+        <i class="fas fa-arrow-right"></i>
       </a>
     </div>
-  </div>
 
-  <!-- ==========================================================================
-       HERO SECTION
-       ========================================================================== -->
-  <section id="inicio" class="relative pt-36 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-to-b from-sky-50/70 via-white to-slate-50">
-    <!-- Ambient Glow Blobs -->
-    <div class="hero-glow-blob-1 top-20 -left-20"></div>
-    <div class="hero-glow-blob-2 top-40 -right-20"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
-        <!-- Hero Left Column: Copy & Value Proposition -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          
-          <!-- Badge -->
-          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full badge-tech text-sky-900 text-xs sm:text-sm font-bold shadow-sm">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Innovación en Salud Digital • Proyecto VitaLink</span>
-          </div>
-
-          <!-- Main Heading -->
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
-            Conectando el cuidado, <br class="hidden sm:inline" />
-            <span class="bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 bg-clip-text text-transparent">protegiendo vidas</span> en tiempo real.
-          </h1>
-
-          <!-- Subtitle / Value Prop -->
-          <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-            Plataforma digital integral de <strong>monitoreo preventivo y acompañamiento</strong> que conecta en un mismo ecosistema a <strong>adultos mayores, familiares y centros de salud</strong> para detectar oportunamente situaciones de riesgo y actuar sin demoras.
-          </p>
-
-          <!-- Key Bullet Highlights -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-left max-w-xl mx-auto lg:mx-0 text-sm font-semibold text-slate-700">
-            <div class="flex items-center gap-2.5">
-              <i class="fas fa-check-circle text-emerald-500 text-base"></i>
-              <span>Monitoreo biométrico preventivo</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <i class="fas fa-check-circle text-emerald-500 text-base"></i>
-              <span>Detección automática de caídas</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <i class="fas fa-check-circle text-emerald-500 text-base"></i>
-              <span>Expediente clínico centralizado</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <i class="fas fa-check-circle text-emerald-500 text-base"></i>
-              <span>Enlace directo con clínicas y médicos</span>
-            </div>
-          </div>
-
-          <!-- Hero CTAs -->
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-            <a href="#simulador" class="btn-senior w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl text-base font-bold text-white bg-gradient-to-r from-sky-600 via-sky-700 to-teal-700 hover:from-sky-700 hover:to-teal-800 shadow-lg shadow-sky-600/25 hover:shadow-xl transition-all transform hover:-translate-y-0.5">
-              <i class="fas fa-heartbeat text-lg animate-pulse"></i>
-              <span>Probar Simulador en Vivo</span>
-            </a>
-            <a href="#contacto" class="btn-senior w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-base font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all">
-              <i class="fas fa-user-plus text-sky-600"></i>
-              <span>Solicitar Demostración</span>
-            </a>
-          </div>
-
-          <!-- Social Proof Micro-Bar -->
-          <div class="pt-4 flex items-center justify-center lg:justify-start gap-4 text-xs font-medium text-slate-500">
-            <div class="flex -space-x-2">
-              <div class="w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-xs border-2 border-white">EM</div>
-              <div class="w-8 h-8 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold text-xs border-2 border-white">CR</div>
-              <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs border-2 border-white">ML</div>
-            </div>
-            <span>Diseñado con base en estándares de salud preventiva y necesidades de familias reales.</span>
-          </div>
-
-        </div>
-
-        <!-- Hero Right Column: Interactive Patient Telemetry Card (Mockup) -->
-        <div class="lg:col-span-5">
-          <div class="relative mx-auto max-w-md">
-            
-            <!-- Floating Decorative Card -->
-            <div class="absolute -top-6 -left-6 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-200 z-20 hidden sm:flex items-center gap-3 animate-float">
-              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg font-bold">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <div>
-                <p class="text-xs font-semibold text-slate-500">Estado de Protección</p>
-                <p class="text-sm font-extrabold text-emerald-600 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Activo • 24/7 Conectado
-                </p>
-              </div>
-            </div>
-
-            <!-- Main Patient Monitor Panel Card -->
-            <div class="bg-slate-900 text-white rounded-3xl p-6 shadow-2xl border border-slate-800 relative overflow-hidden">
-              
-              <!-- Card Header -->
-              <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-sky-500 to-teal-400 p-0.5">
-                    <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center">
-                      <i class="fas fa-user-clock text-sky-400 text-lg"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-base text-white">Elena Mendoza C.</h3>
-                    <p class="text-xs text-slate-400 font-medium">74 años • Hogar (San Borja)</p>
-                  </div>
-                </div>
-                <div class="text-right">
-                  <span class="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs px-2.5 py-1 rounded-full font-bold">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Estable
-                  </span>
-                </div>
-              </div>
-
-              <!-- Animated ECG Wave Canvas / SVG -->
-              <div class="bg-slate-950/80 rounded-2xl p-4 border border-slate-800/80 mb-4 relative overflow-hidden">
-                <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                  <span class="font-mono text-sky-400 flex items-center gap-1.5">
-                    <i class="fas fa-wave-square"></i> TELEMETRÍA CARDÍACA EN VIVO
-                  </span>
-                  <span class="text-emerald-400 font-mono font-bold">RITMO SINUSAL NORMAL</span>
-                </div>
-
-                <!-- SVG ECG Line Animation -->
-                <div class="h-16 w-full flex items-center">
-                  <svg viewBox="0 0 500 80" class="w-full h-full" fill="none">
-                    <path class="ecg-line" d="M0,40 L60,40 L70,38 L80,42 L90,40 L110,40 L120,15 L130,70 L140,25 L150,45 L160,40 L210,40 L220,15 L230,70 L240,25 L250,45 L260,40 L310,40 L320,15 L330,70 L340,25 L350,45 L360,40 L410,40 L420,15 L430,70 L440,25 L450,45 L460,40 L500,40" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </div>
-              </div>
-
-              <!-- Vital Signs Grid -->
-              <div class="grid grid-cols-2 gap-3 mb-4">
-                <!-- BPM -->
-                <div class="bg-slate-800/60 p-3.5 rounded-2xl border border-slate-700/60 flex items-center justify-between">
-                  <div>
-                    <p class="text-xs text-slate-400 font-medium">Frecuencia Cardíaca</p>
-                    <p class="text-2xl font-extrabold text-white"><span class="text-rose-400">72</span> <span class="text-xs font-normal text-slate-400">BPM</span></p>
-                  </div>
-                  <div class="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center">
-                    <i class="fas fa-heart text-base animate-pulse"></i>
-                  </div>
-                </div>
-
-                <!-- Presión Arterial -->
-                <div class="bg-slate-800/60 p-3.5 rounded-2xl border border-slate-700/60 flex items-center justify-between">
-                  <div>
-                    <p class="text-xs text-slate-400 font-medium">Presión Arterial</p>
-                    <p class="text-2xl font-extrabold text-white">118/76 <span class="text-xs font-normal text-slate-400">mmHg</span></p>
-                  </div>
-                  <div class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center">
-                    <i class="fas fa-stethoscope text-base"></i>
-                  </div>
-                </div>
-
-                <!-- SpO2 -->
-                <div class="bg-slate-800/60 p-3.5 rounded-2xl border border-slate-700/60 flex items-center justify-between">
-                  <div>
-                    <p class="text-xs text-slate-400 font-medium">Oxígeno en Sangre</p>
-                    <p class="text-2xl font-extrabold text-white">98% <span class="text-xs font-normal text-slate-400">SpO2</span></p>
-                  </div>
-                  <div class="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center">
-                    <i class="fas fa-lungs text-base"></i>
-                  </div>
-                </div>
-
-                <!-- Temperatura -->
-                <div class="bg-slate-800/60 p-3.5 rounded-2xl border border-slate-700/60 flex items-center justify-between">
-                  <div>
-                    <p class="text-xs text-slate-400 font-medium">Temperatura</p>
-                    <p class="text-2xl font-extrabold text-white">36.6 <span class="text-xs font-normal text-slate-400">°C</span></p>
-                  </div>
-                  <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
-                    <i class="fas fa-thermometer-half text-base"></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Quick Notification / Status Banner -->
-              <div class="bg-slate-800/80 rounded-2xl p-3 border border-slate-700 flex items-center justify-between text-xs">
-                <div class="flex items-center gap-2 text-slate-300">
-                  <i class="fas fa-pills text-teal-400"></i>
-                  <span>Próximo medicamento: <strong>Losartán 50mg</strong> (08:00 PM)</span>
-                </div>
-                <span class="text-emerald-400 font-bold">Programado</span>
-              </div>
-
-              <!-- Emergency Quick Connect Button -->
-              <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                  <span class="text-xs text-slate-400">Familiares vinculados: <strong>3</strong></span>
-                </div>
-                <a href="#simulador" class="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1">
-                  Interactuar en Simulador <i class="fas fa-arrow-right text-[10px]"></i>
-                </a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
+    <!-- Team Lineup Graphic -->
+    <div class="team-lineup-wrapper">
+      <img src="public/assets/images/team-strip.svg" alt="PulsePower Specialists Lineup" />
     </div>
   </section>
 
-  <!-- ==========================================================================
-       STATS & IMPACT BAR (ANIMATED COUNTERS)
-       ========================================================================== -->
-  <section id="section-stats" class="py-12 bg-white border-y border-slate-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        
-        <div class="space-y-1">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-black text-sky-600 stat-counter" data-target="68" data-prefix="-" data-suffix="%">-0%</p>
-          <p class="text-xs sm:text-sm font-bold text-slate-700">Tiempo de Respuesta</p>
-          <p class="text-xs text-slate-500 font-normal">Ante incidentes o caídas</p>
-        </div>
-
-        <div class="space-y-1">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-black text-teal-600 stat-counter" data-target="99.4" data-suffix="%">0%</p>
-          <p class="text-xs sm:text-sm font-bold text-slate-700">Precisión de Alertas</p>
-          <p class="text-xs text-slate-500 font-normal">Detección preventiva temprana</p>
-        </div>
-
-        <div class="space-y-1">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-600 stat-counter" data-target="1200" data-prefix="+" data-suffix="">+0</p>
-          <p class="text-xs sm:text-sm font-bold text-slate-700">Familias Beneficiadas</p>
-          <p class="text-xs text-slate-500 font-normal">Proyección de impacto regional</p>
-        </div>
-
-        <div class="space-y-1">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 stat-counter" data-target="24" data-suffix="/7">0/7</p>
-          <p class="text-xs sm:text-sm font-bold text-slate-700">Monitoreo & Conexión</p>
-          <p class="text-xs text-slate-500 font-normal">Ecosistema continuo sin interrupciones</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       PROBLEM VS SOLUTION (ANTECEDENTES Y PROBLEMÁTICA LEAN UX)
-       ========================================================================== -->
-  <section id="problematica" class="py-20 lg:py-28 bg-slate-50 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-stethoscope"></i> Antecedentes & Problemática Real
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
-          Del cuidado reactivo e incierto al <span class="text-sky-600">acompañamiento preventivo</span>
-        </h2>
-        <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-          Según la OMS, para 2030 una de cada seis personas tendrá 60 años o más. El modelo tradicional basado en llamadas esporádicas ya no es suficiente. VitaLink transforma la experiencia de cuidado.
-        </p>
-      </div>
-
-      <!-- Problem vs Solution Comparative Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        
-        <!-- Left: The Problem (Modelo Tradicional) -->
-        <div class="bg-white rounded-3xl p-8 shadow-sm border-2 border-rose-100 relative overflow-hidden flex flex-col justify-between">
-          <div class="space-y-6">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl font-bold">
-                <i class="fas fa-times-circle"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-slate-900">El Modelo Tradicional y sus Límites</h3>
-                <p class="text-xs text-rose-600 font-semibold uppercase tracking-wider">Reactivo • Fragmentado • Manual</p>
-              </div>
-            </div>
-
-            <div class="space-y-4 text-sm text-slate-600">
-              <div class="flex items-start gap-3 p-3 rounded-xl bg-rose-50/50">
-                <i class="fas fa-exclamation-triangle text-rose-500 mt-1 flex-shrink-0"></i>
-                <div>
-                  <strong class="text-slate-900 block font-bold">Falta de monitoreo continuo:</strong>
-                  Los familiares solo conocen el estado del mayor si llaman o visitan presencialmente.
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-3 rounded-xl bg-rose-50/50">
-                <i class="fas fa-exclamation-triangle text-rose-500 mt-1 flex-shrink-0"></i>
-                <div>
-                  <strong class="text-slate-900 block font-bold">Detección tardía de riesgos:</strong>
-                  Caídas o alteraciones de presión pueden pasar desapercibidas por horas si el adulto mayor está solo.
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-3 rounded-xl bg-rose-50/50">
-                <i class="fas fa-exclamation-triangle text-rose-500 mt-1 flex-shrink-0"></i>
-                <div>
-                  <strong class="text-slate-900 block font-bold">Información de salud dispersa:</strong>
-                  Recetas en papel, exámenes perdidos y recetas desactualizadas complican la toma de decisiones.
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-3 rounded-xl bg-rose-50/50">
-                <i class="fas fa-exclamation-triangle text-rose-500 mt-1 flex-shrink-0"></i>
-                <div>
-                  <strong class="text-slate-900 block font-bold">Desconexión con la red de salud:</strong>
-                  Ante una emergencia, la familia debe improvisar llamadas a clínicas sin que estas tengan datos del paciente.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-rose-100 text-xs font-semibold text-rose-700 flex items-center gap-2">
-            <i class="fas fa-heart-crack"></i>
-            <span>Resultado: Preocupación constante en hijos e incertidumbre para el adulto mayor.</span>
-          </div>
-        </div>
-
-        <!-- Right: The VitaLink Solution (Ecosistema Conectado) -->
-        <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-sky-950 text-white rounded-3xl p-8 shadow-xl border border-sky-800/50 relative overflow-hidden flex flex-col justify-between">
-          <div class="space-y-6">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-500 to-teal-400 text-white flex items-center justify-center text-xl font-bold shadow-lg">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-white">La Solución Integral VitaLink</h3>
-                <p class="text-xs text-emerald-400 font-semibold uppercase tracking-wider">Preventivo • Centralizado • Conectado 24/7</p>
-              </div>
-            </div>
-
-            <div class="space-y-4 text-sm text-slate-300">
-              <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                <i class="fas fa-shield-heart text-teal-400 mt-1 flex-shrink-0"></i>
-                <div>
-                  <strong class="text-white block font-bold">Monitoreo Preventivo No Invasivo:</strong>
-                  Seguimiento continuo de signos y actividad sin alterar la rutina diaria del adulto mayor.
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                <i class="fas fa-bell text-teal-400 mt-1 flex-shrink-0"></i>
-                <div>
-                  <strong class="text-white block font-bold">Alertas Inteligentes Multicanal:</strong>
-                  Notificación inmediata a familiares y servicios de salud ante anomalías biométricas o caídas.
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                <i class="fas fa-folder-medical text-teal-400 mt-1 flex-shrink-0"></i>
-                <div>
-                  <strong class="text-white block font-bold">Expediente Clínico en la Nube:</strong>
-                  Historial médico, alergias, medicación y contactos de emergencia unificados y siempre accesibles.
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                <i class="fas fa-hospital-user text-teal-400 mt-1 flex-shrink-0"></i>
-                <div>
-                  <strong class="text-white block font-bold">Enlace Inmediato con Red de Salud:</strong>
-                  Las clínicas asociadas reciben datos biométricos previos para coordinar ambulancias y triaje rápido.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-semibold text-emerald-300 flex items-center gap-2">
-            <i class="fas fa-smile-beam"></i>
-            <span>Resultado: Adultos mayores más autónomos y familiares con tranquilidad total.</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       FUNCIONALIDADES / PILARES DE VITALINK
-       ========================================================================== -->
-  <section id="funcionalidades" class="py-20 lg:py-28 bg-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-cubes"></i> Arquitectura de la Plataforma
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
-          6 Pilares que hacen de VitaLink una <span class="text-teal-600">plataforma única</span>
-        </h2>
-        <p class="text-base sm:text-lg text-slate-600 font-normal">
-          Diseñado bajo metodología Lean UX para garantizar facilidad de uso, alta confiabilidad y respuesta en segundos.
-        </p>
-      </div>
-
-      <!-- Features 6-Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Feature 1 -->
-        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-sky-50/50 border border-slate-200/80 hover:border-sky-300 transition-all duration-300 group">
-          <div class="w-14 h-14 rounded-2xl bg-sky-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-sky-600/20 group-hover:scale-110 transition-transform">
-            <i class="fas fa-heart-pulse"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">1. Monitoreo Preventivo Continuo</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Captura y análisis en tiempo real de signos vitales clave: frecuencia cardíaca, presión arterial, saturación de oxígeno (SpO2), glucosa y actividad física.
-          </p>
-          <ul class="text-xs font-semibold text-slate-700 space-y-1.5 border-t border-slate-200 pt-4">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-sky-600"></i> Integración con wearables inteligentes</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-sky-600"></i> Gráficos de tendencias y evolución</li>
-          </ul>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-rose-50/50 border border-slate-200/80 hover:border-rose-300 transition-all duration-300 group">
-          <div class="w-14 h-14 rounded-2xl bg-rose-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-rose-600/20 group-hover:scale-110 transition-transform">
-            <i class="fas fa-bell"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">2. Detección Inteligente & Alertas SOS</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Algoritmos que detectan caídas repentinas, alteraciones bruscas en signos vitales o inactividad prolongada inusual, emitiendo alertas multicanal inmediatas.
-          </p>
-          <ul class="text-xs font-semibold text-slate-700 space-y-1.5 border-t border-slate-200 pt-4">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-rose-600"></i> Notificaciones Push, SMS y WhatsApp</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-rose-600"></i> Geolocalización GPS precisa</li>
-          </ul>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-teal-50/50 border border-slate-200/80 hover:border-teal-300 transition-all duration-300 group">
-          <div class="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-teal-600/20 group-hover:scale-110 transition-transform">
-            <i class="fas fa-folder-open"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">3. Expediente de Salud Centralizado</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Consolidación de la historia médica, diagnósticos previos, medicamentos actuales, alergias y contactos de emergencia en un único repositorio digital seguro.
-          </p>
-          <ul class="text-xs font-semibold text-slate-700 space-y-1.5 border-t border-slate-200 pt-4">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-teal-600"></i> Encriptación y privacidad total</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-teal-600"></i> Acceso concedido a médicos autorizados</li>
-          </ul>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-indigo-50/50 border border-slate-200/80 hover:border-indigo-300 transition-all duration-300 group">
-          <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-indigo-600/20 group-hover:scale-110 transition-transform">
-            <i class="fas fa-hospital-alt"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">4. Red de Enlace Clínico & Hospitalario</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Conexión directa entre la familia y clínicas, hospitales o médicos independientes registrados para solicitar asistencia médica a domicilio o teleconsulta.
-          </p>
-          <ul class="text-xs font-semibold text-slate-700 space-y-1.5 border-t border-slate-200 pt-4">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Despacho coordinado de emergencias</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Visibilidad de telemetría para triaje</li>
-          </ul>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-amber-50/50 border border-slate-200/80 hover:border-amber-300 transition-all duration-300 group">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-amber-500/20 group-hover:scale-110 transition-transform">
-            <i class="fas fa-universal-access"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">5. Modo Senior & Accesibilidad Total</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Interfaz adaptada pensando en personas mayores: tipografías de alto contraste y gran tamaño, botones táctiles amplios, comandos de voz y botón SOS de 1 toque.
-          </p>
-          <ul class="text-xs font-semibold text-slate-700 space-y-1.5 border-t border-slate-200 pt-4">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Cero curva de aprendizaje compleja</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Cumplimiento con accesibilidad WCAG</li>
-          </ul>
-        </div>
-
-        <!-- Feature 6 -->
-        <div class="p-8 rounded-3xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 group">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-emerald-600/20 group-hover:scale-110 transition-transform">
-            <i class="fas fa-calendar-check"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">6. Gestor de Medicación & Rutinas</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Recordatorios automatizados de tomas de medicamentos, hidratación y citas médicas. Notifica al familiar si una dosis importante no fue confirmada.
-          </p>
-          <ul class="text-xs font-semibold text-slate-700 space-y-1.5 border-t border-slate-200 pt-4">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-600"></i> Confirmación con un toque</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-600"></i> Registro histórico de adherencia</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       SIMULADOR INTERACTIVO DE VITALINK (HERRAMIENTA CLAVE)
-       ========================================================================== -->
-  <section id="simulador" class="py-20 lg:py-28 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-white relative overflow-hidden">
-    
-    <!-- Decorative Glows -->
-    <div class="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-play-circle text-emerald-400"></i> Laboratorio Interactivo
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-          Simulador en Vivo del <span class="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Ecosistema VitaLink</span>
-        </h2>
-        <p class="text-base sm:text-lg text-slate-300 font-normal">
-          Experimenta cómo interactúan los 3 roles de la plataforma y pon a prueba el sistema detonando eventos de salud simulados.
-        </p>
-      </div>
-
-      <!-- Role Tabs Navigation -->
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
-        <button class="role-tab-btn active px-6 py-3 rounded-2xl font-bold text-sm bg-sky-600 text-white shadow-md transition-all flex items-center gap-2" data-role="familiar">
-          <i class="fas fa-mobile-screen-button"></i> 1. Vista Familiar (Dashboard)
-        </button>
-        <button class="role-tab-btn px-6 py-3 rounded-2xl font-bold text-sm bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all flex items-center gap-2" data-role="senior">
-          <i class="fas fa-person-cane"></i> 2. Vista Adulto Mayor (Modo Simple)
-        </button>
-        <button class="role-tab-btn px-6 py-3 rounded-2xl font-bold text-sm bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all flex items-center gap-2" data-role="clinica">
-          <i class="fas fa-hospital"></i> 3. Vista Red Médica / Clínica (B2B)
-        </button>
-      </div>
-
-      <!-- Simulator Content Box -->
-      <div class="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
-        
-        <!-- Scenario Trigger Action Buttons -->
-        <div class="mb-8 p-4 rounded-2xl bg-slate-950/70 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="text-left">
-            <span class="text-xs font-mono text-sky-400 uppercase tracking-wider block font-bold">Simular Evento en Tiempo Real:</span>
-            <p class="text-xs text-slate-400">Haz clic en un escenario para ver la reacción instantánea de la plataforma</p>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full md:w-auto">
-            <button id="btn-sim-normal" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-sky-600 text-white border border-sky-600 transition-all flex items-center justify-center gap-1.5 ring-2 ring-sky-300">
-              <i class="fas fa-check-circle text-emerald-400"></i> Normal
-            </button>
-            <button id="btn-sim-alert" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition-all flex items-center justify-center gap-1.5">
-              <i class="fas fa-triangle-exclamation text-amber-500"></i> Taquicardia
-            </button>
-            <button id="btn-sim-fall" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition-all flex items-center justify-center gap-1.5">
-              <i class="fas fa-user-injured text-rose-500"></i> Caída (SOS)
-            </button>
-            <button id="btn-sim-meds" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition-all flex items-center justify-center gap-1.5">
-              <i class="fas fa-pills text-teal-500"></i> Medicación
-            </button>
-          </div>
-        </div>
-
-        <!-- ==================== VIEW 1: VISTA FAMILIAR ==================== -->
-        <div id="role-view-familiar" class="role-view-content block space-y-6">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            
-            <!-- Left Telemetry Panel -->
-            <div class="lg:col-span-7 space-y-4">
-              <!-- Live Telemetry Card -->
-              <div class="bg-slate-950 rounded-2xl p-5 border border-slate-800">
-                <div class="flex items-center justify-between mb-4">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold">
-                      <i class="fas fa-user"></i>
-                    </div>
-                    <div>
-                      <h4 class="font-bold text-white text-sm sm:text-base">Adulto Mayor: Carmen Rosa (78 años)</h4>
-                      <p class="text-xs text-slate-400">Dispositivo VitaLink Smartband v2 • Batería 92%</p>
-                    </div>
-                  </div>
-                  <div id="sim-status-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Estado: Estable & Seguro
-                  </div>
-                </div>
-
-                <!-- 4 Metrics Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center mb-4">
-                  <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
-                    <span class="text-[11px] text-slate-400 block">Ritmo Cardíaco</span>
-                    <span id="sim-bpm" class="text-2xl font-black text-rose-400">72</span>
-                    <span class="text-[10px] text-slate-500 block">BPM</span>
-                  </div>
-                  <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
-                    <span class="text-[11px] text-slate-400 block">Presión Arterial</span>
-                    <span id="sim-bp" class="text-2xl font-black text-sky-400">118/76</span>
-                    <span class="text-[10px] text-slate-500 block">mmHg</span>
-                  </div>
-                  <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
-                    <span class="text-[11px] text-slate-400 block">Oxigenación</span>
-                    <span id="sim-spo2" class="text-2xl font-black text-teal-400">98%</span>
-                    <span class="text-[10px] text-slate-500 block">SpO2</span>
-                  </div>
-                  <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
-                    <span class="text-[11px] text-slate-400 block">Temperatura</span>
-                    <span id="sim-temp" class="text-2xl font-black text-amber-400">36.6°C</span>
-                    <span class="text-[10px] text-slate-500 block">Corporal</span>
-                  </div>
-                </div>
-
-                <!-- ECG Preview -->
-                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <span id="sim-ecg-dot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-                    <span class="text-xs font-mono text-slate-300">Canal ECG Activo • Transmisión Continua</span>
-                  </div>
-                  <span class="text-[11px] text-emerald-400 font-mono">Conectado a Red VitaLink</span>
-                </div>
-              </div>
-
-              <!-- Reactive Alert Card in Simulator -->
-              <div id="sim-alert-card" class="p-4 rounded-xl border border-emerald-200 bg-emerald-50/70 text-emerald-900 transition-all">
-                <div class="flex items-start justify-between">
-                  <div class="flex items-start gap-3">
-                    <i class="fas fa-circle-info text-emerald-600 text-lg mt-0.5"></i>
-                    <div>
-                      <p id="sim-alert-msg" class="text-sm font-medium"><strong>Todo en orden:</strong> Signos vitales dentro del rango óptimo. Última lectura hace 1 minuto.</p>
-                    </div>
-                  </div>
-                  <span id="sim-alert-time" class="text-[11px] font-mono text-emerald-700 font-bold ml-2">Ahora mismo</span>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Right Activity & Quick Actions -->
-            <div class="lg:col-span-5 space-y-4">
-              <div class="bg-slate-950 rounded-2xl p-5 border border-slate-800 space-y-4">
-                <h4 class="font-bold text-white text-sm flex items-center justify-between">
-                  <span><i class="fas fa-list-check text-sky-400 mr-2"></i> Registro del Día</span>
-                  <span class="text-[11px] text-slate-400 font-normal">Hoy</span>
-                </h4>
-
-                <div class="space-y-2.5 text-xs">
-                  <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-pills text-teal-400"></i>
-                      <span>Losartán 50mg (Mañana)</span>
-                    </div>
-                    <span class="text-emerald-400 font-bold">Tomado 08:02 AM</span>
-                  </div>
-
-                  <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-person-walking text-sky-400"></i>
-                      <span>Paseo en parque (1,840 pasos)</span>
-                    </div>
-                    <span class="text-slate-400">10:30 AM</span>
-                  </div>
-
-                  <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-house-chimney text-amber-400"></i>
-                      <span>Regreso al hogar (Geovalla OK)</span>
-                    </div>
-                    <span class="text-slate-400">11:15 AM</span>
-                  </div>
-                </div>
-
-                <!-- Emergency Quick Actions Buttons -->
-                <div class="pt-2 grid grid-cols-2 gap-2">
-                  <button onclick="showToast('📞 Llamando directamente al teléfono de Carmen...')" class="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 flex items-center justify-center gap-2 border border-slate-700">
-                    <i class="fas fa-phone text-sky-400"></i> Llamar al Mayor
-                  </button>
-                  <button onclick="showToast('🏥 Conectando con Central Médica San Borja...')" class="w-full py-2.5 px-3 rounded-xl bg-rose-600/20 hover:bg-rose-600/30 text-xs font-bold text-rose-300 flex items-center justify-center gap-2 border border-rose-500/40">
-                    <i class="fas fa-truck-medical text-rose-400"></i> Enlace Médico
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ==================== VIEW 2: VISTA ADULTO MAYOR (MODO SIMPLE) ==================== -->
-        <div id="role-view-senior" class="role-view-content hidden space-y-6">
-          <div class="max-w-3xl mx-auto bg-slate-950 rounded-3xl p-6 sm:p-8 border-2 border-amber-400/40 space-y-6 text-center">
-            
-            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-              <div class="text-left">
-                <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Modo Accesible Senior</span>
-                <h3 class="text-2xl font-black text-white">¡Hola, Carmen! 👋</h3>
-              </div>
-              <div class="text-right">
-                <span class="text-xs text-emerald-400 font-bold bg-emerald-950 px-3 py-1.5 rounded-full border border-emerald-800">
-                  <i class="fas fa-check-circle mr-1"></i> Todo está bien hoy
-                </span>
-              </div>
-            </div>
-
-            <!-- Big Simple Accessible Action Tiles -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <!-- Button 1: Estoy bien -->
-              <button onclick="showToast('✅ ¡Mensaje enviado a tus hijos! Saben que estás bien.')" class="p-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xl flex items-center justify-center gap-4 shadow-lg transition-transform transform active:scale-95">
-                <i class="fas fa-thumbs-up text-3xl"></i>
-                <span>ESTOY BIEN</span>
-              </button>
-
-              <!-- Button 2: Mi Medicina -->
-              <button onclick="showToast('💊 ¡Perfecto! Registramos tu medicina de la tarde.')" class="p-6 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white font-black text-xl flex items-center justify-center gap-4 shadow-lg transition-transform transform active:scale-95">
-                <i class="fas fa-pills text-3xl"></i>
-                <span>TOMÉ MI MEDICINA</span>
-              </button>
-
-              <!-- Button 3: Llamar a Hijos -->
-              <button onclick="showToast('📞 Marcando a tu hijo Carlos...')" class="p-6 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xl flex items-center justify-center gap-4 shadow-lg transition-transform transform active:scale-95">
-                <i class="fas fa-phone-volume text-3xl"></i>
-                <span>LLAMAR A FAMILIA</span>
-              </button>
-
-              <!-- Button 4: BOTÓN DE EMERGENCIA SOS GIGANTE -->
-              <button onclick="showToast('🚨 SOS ACTIVADO: Se avisó a tus familiares y a la ambulancia.')" class="p-6 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-black text-xl flex items-center justify-center gap-4 shadow-xl border-4 border-rose-400 animate-pulse transition-transform transform active:scale-95">
-                <i class="fas fa-bell text-3xl"></i>
-                <span>BOTÓN DE AYUDA SOS</span>
-              </button>
-            </div>
-
-            <p class="text-xs text-slate-400 font-medium pt-2">
-              Diseño de alto contraste y letras extra grandes para facilitar su uso sin necesidad de asistencia.
-            </p>
-
-          </div>
-        </div>
-
-        <!-- ==================== VIEW 3: VISTA CLÍNICA / HOSPITAL (B2B) ==================== -->
-        <div id="role-view-clinica" class="role-view-content hidden space-y-6">
-          <div class="bg-slate-950 rounded-2xl p-6 border border-slate-800 space-y-6">
-            
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
-              <div>
-                <span class="text-xs uppercase tracking-widest text-sky-400 font-bold">Portal Médico VitaLink Cloud</span>
-                <h3 class="text-xl font-bold text-white">Central de Monitoreo & Urgencias - Red Sanitaria</h3>
-              </div>
-              <div class="flex items-center gap-3">
-                <span class="text-xs text-slate-300 bg-slate-800 px-3 py-1 rounded-lg border border-slate-700">
-                  <i class="fas fa-hospital-user text-sky-400 mr-1.5"></i> 148 Pacientes Conectados
-                </span>
-                <span class="text-xs text-rose-300 bg-rose-950/60 px-3 py-1 rounded-lg border border-rose-800">
-                  <i class="fas fa-triangle-exclamation text-rose-400 mr-1.5"></i> 1 Alerta en Triaje
-                </span>
-              </div>
-            </div>
-
-            <!-- Clinical Triage Table -->
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs text-slate-300">
-                <thead class="bg-slate-900 text-slate-400 font-mono uppercase text-[11px] border-b border-slate-800">
-                  <tr>
-                    <th class="py-3 px-4">Paciente</th>
-                    <th class="py-3 px-4">Edad / Ubicación</th>
-                    <th class="py-3 px-4">Signos Actuales</th>
-                    <th class="py-3 px-4">Nivel Triaje</th>
-                    <th class="py-3 px-4 text-right">Acción Clínica</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-800">
-                  <tr class="bg-rose-950/20 hover:bg-rose-950/30">
-                    <td class="py-3.5 px-4 font-bold text-white">
-                      <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
-                        <span>Mendoza, Carmen R.</span>
-                      </div>
-                    </td>
-                    <td class="py-3.5 px-4">78 años • San Borja</td>
-                    <td class="py-3.5 px-4 font-mono text-rose-300">FC: 128 BPM | PA: 145/95</td>
-                    <td class="py-3.5 px-4">
-                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">Prioridad 2 (Urgencia)</span>
-                    </td>
-                    <td class="py-3.5 px-4 text-right">
-                      <button onclick="showToast('🚑 Unidad móvil de respuesta despachada con telemetría sincronizada.')" class="px-3 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold">
-                        Despachar Unidad
-                      </button>
-                    </td>
-                  </tr>
-
-                  <tr class="hover:bg-slate-900/50">
-                    <td class="py-3.5 px-4 font-bold text-white">Salazar, Roberto</td>
-                    <td class="py-3.5 px-4">82 años • Miraflores</td>
-                    <td class="py-3.5 px-4 font-mono text-slate-300">FC: 68 BPM | PA: 115/70</td>
-                    <td class="py-3.5 px-4">
-                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Prioridad 4 (Estable)</span>
-                    </td>
-                    <td class="py-3.5 px-4 text-right">
-                      <button onclick="showToast('📋 Historial clínico y medicación abiertos en panel.')" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold">
-                        Ver Historial
-                      </button>
-                    </td>
-                  </tr>
-
-                  <tr class="hover:bg-slate-900/50">
-                    <td class="py-3.5 px-4 font-bold text-white">Vega, Lucía</td>
-                    <td class="py-3.5 px-4">71 años • Surco</td>
-                    <td class="py-3.5 px-4 font-mono text-slate-300">FC: 74 BPM | PA: 120/80</td>
-                    <td class="py-3.5 px-4">
-                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Prioridad 4 (Estable)</span>
-                    </td>
-                    <td class="py-3.5 px-4 text-right">
-                      <button onclick="showToast('📋 Historial clínico y medicación abiertos en panel.')" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold">
-                        Ver Historial
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p class="text-xs text-slate-400">
-              * El personal de salud recibe la telemetría previa y antecedentes antes del arribo, reduciendo el tiempo de diagnóstico en emergencias.
-            </p>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       SEGMENTOS OBJETIVO (REPORT CHAPTER 1.3)
-       ========================================================================== -->
-  <section id="segmentos" class="py-20 lg:py-28 bg-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-users-viewfinder"></i> Segmentos de Usuarios
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
-          Diseñado para quienes cuidan y <span class="text-sky-600">quienes brindan salud</span>
-        </h2>
-        <p class="text-base sm:text-lg text-slate-600 font-normal">
-          VitaLink cubre integralmente las necesidades de las familias y la capacidad operativa de las instituciones médicas.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        
-        <!-- Segment 1: Familias y Adultos Mayores -->
-        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 hover:shadow-xl transition-shadow flex flex-col justify-between">
-          <div class="space-y-6">
-            <div class="flex items-center gap-4">
-              <div class="w-14 h-14 rounded-2xl bg-sky-600 text-white flex items-center justify-center text-2xl shadow-md">
-                <i class="fas fa-people-roof"></i>
-              </div>
-              <div>
-                <span class="text-xs uppercase font-bold text-sky-600 tracking-wider">Segmento B2C</span>
-                <h3 class="text-2xl font-bold text-slate-950">Adultos Mayores & Sus Familias</h3>
-              </div>
-            </div>
-
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Adultos mayores de 60 años a más que desean mantener su independencia y seguridad en el hogar, junto a hijos y familiares que buscan acompañarlos sin interrumpir sus actividades laborales.
-            </p>
-
-            <div class="space-y-3 pt-2">
-              <h4 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">¿Qué resuelve VitaLink para la familia?</h4>
-              
-              <div class="flex items-start gap-3 text-sm text-slate-700">
-                <i class="fas fa-circle-check text-emerald-500 mt-1 flex-shrink-0"></i>
-                <span><strong>Tranquilidad 24/7:</strong> Saber cómo está su ser querido sin necesidad de llamadas insistentes.</span>
-              </div>
-              
-              <div class="flex items-start gap-3 text-sm text-slate-700">
-                <i class="fas fa-circle-check text-emerald-500 mt-1 flex-shrink-0"></i>
-                <span><strong>Preservación de la autonomía:</strong> El adulto mayor no se siente invadido ni pierde su libertad.</span>
-              </div>
-
-              <div class="flex items-start gap-3 text-sm text-slate-700">
-                <i class="fas fa-circle-check text-emerald-500 mt-1 flex-shrink-0"></i>
-                <span><strong>Respuesta coordinada:</strong> Todos los hermanos o cuidadores reciben la misma alerta al instante.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-500">Plan ideal: Familiar Esencial o Pro</span>
-            <a href="#planes" class="text-xs font-bold text-sky-600 hover:text-sky-700 flex items-center gap-1">Ver planes para familias →</a>
-          </div>
-        </div>
-
-        <!-- Segment 2: Clínicas y Hospitales -->
-        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 hover:shadow-xl transition-shadow flex flex-col justify-between">
-          <div class="space-y-6">
-            <div class="flex items-center gap-4">
-              <div class="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center text-2xl shadow-md">
-                <i class="fas fa-hospital-user"></i>
-              </div>
-              <div>
-                <span class="text-xs uppercase font-bold text-teal-600 tracking-wider">Segmento B2B</span>
-                <h3 class="text-2xl font-bold text-slate-950">Clínicas, Hospitales & Médicos</h3>
-              </div>
-            </div>
-
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Clínicas privadas, centros geriátricos, médicos independientes y servicios de atención a domicilio que buscan un canal digital para gestionar y captar pacientes con telemetría integrada.
-            </p>
-
-            <div class="space-y-3 pt-2">
-              <h4 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">¿Qué ofrece VitaLink a los prestadores de salud?</h4>
-              
-              <div class="flex items-start gap-3 text-sm text-slate-700">
-                <i class="fas fa-circle-check text-teal-600 mt-1 flex-shrink-0"></i>
-                <span><strong>Acceso a nuevos pacientes:</strong> Canal directo para recibir solicitudes y derivaciones de urgencias.</span>
-              </div>
-              
-              <div class="flex items-start gap-3 text-sm text-slate-700">
-                <i class="fas fa-circle-check text-teal-600 mt-1 flex-shrink-0"></i>
-                <span><strong>Telemetría y triaje anticipado:</strong> Conocen los signos vitales antes de que el paciente llegue al centro.</span>
-              </div>
-
-              <div class="flex items-start gap-3 text-sm text-slate-700">
-                <i class="fas fa-circle-check text-teal-600 mt-1 flex-shrink-0"></i>
-                <span><strong>Gestión centralizada en la nube:</strong> Plataforma para monitorear pacientes crónicos a distancia.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-500">Alianzas y Red B2B</span>
-            <a href="#contacto" class="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1">Solicitar convenio institucional →</a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       CÓMO FUNCIONA (PASO A PASO)
-       ========================================================================== -->
-  <section id="como-funciona" class="py-20 lg:py-28 bg-slate-50 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-route"></i> Experiencia de Usuario
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
-          Cómo funciona VitaLink en <span class="text-emerald-600">3 simples pasos</span>
-        </h2>
-        <p class="text-base sm:text-lg text-slate-600 font-normal">
-          Puesta en marcha rápida en menos de 5 minutos, sin configuraciones técnicas complicadas.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-        
-        <!-- Step 1 -->
-        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative space-y-5">
-          <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center text-2xl font-black">
-            1
-          </div>
-          <h3 class="text-xl font-bold text-slate-900">Vincula y Configura</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Descarga la app, registra el perfil del adulto mayor, asocia a los familiares autorizados y vincula los dispositivos de salud o pulsera inteligente en segundos.
-          </p>
-          <div class="text-xs font-bold text-sky-600 flex items-center gap-1.5 pt-2">
-            <i class="fas fa-clock"></i> Tiempo estimado: 3 minutos
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative space-y-5">
-          <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl font-black">
-            2
-          </div>
-          <h3 class="text-xl font-bold text-slate-900">Monitoreo Preventivo Continuo</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            VitaLink realiza el seguimiento silencioso y proactivo de los indicadores de salud y actividad. Los familiares pueden consultar el estado en cualquier momento.
-          </p>
-          <div class="text-xs font-bold text-teal-600 flex items-center gap-1.5 pt-2">
-            <i class="fas fa-shield-heart"></i> Algoritmos no invasivos
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative space-y-5">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl font-black">
-            3
-          </div>
-          <h3 class="text-xl font-bold text-slate-900">Respuesta Oportuna y Coordinada</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Ante cualquier anomalía, caída o solicitud SOS, el sistema notifica de inmediato a los familiares y abre un canal directo con los proveedores de salud registrados.
-          </p>
-          <div class="text-xs font-bold text-emerald-600 flex items-center gap-1.5 pt-2">
-            <i class="fas fa-truck-medical"></i> Despacho en segundos
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       PLANES Y PRECIOS (PRICING)
-       ========================================================================== -->
-  <section id="planes" class="py-20 lg:py-28 bg-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-tags"></i> Planes Transparentes
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
-          Elige el plan ideal para tu <span class="text-sky-600">tranquilidad</span>
-        </h2>
-        <p class="text-base sm:text-lg text-slate-600 font-normal">
-          Sin contratos forzosos. Cancela o cambia de plan en cualquier momento.
+  <!-- ================= Coaching Services Section ================= -->
+  <section class="services-section" id="services">
+    <div class="services-grid">
+      <!-- Left Accordions -->
+      <div class="services-left">
+        <h2 class="section-title-large" data-i18n="services.title">Our Coaching Services</h2>
+        <p class="section-desc-medium" data-i18n="services.subtitle">
+          PulsePower brings your sleep, strain and recovery records together to support informed decisions about your daily routine.
         </p>
 
-        <!-- Billing Toggle -->
-        <div class="pt-4 flex items-center justify-center gap-4">
-          <span class="text-sm font-bold text-slate-700">Facturación Mensual</span>
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" id="pricing-toggle" class="sr-only peer" />
-            <div class="w-14 h-8 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-sky-600"></div>
-          </label>
-          <span class="text-sm font-bold text-sky-700 flex items-center gap-1.5">
-            Facturación Anual <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-0.5 rounded-full font-extrabold">-20% Ahorro</span>
-          </span>
+        <div class="services-accordion-list">
+          <!-- Accordion 1 -->
+          <div class="service-accordion-card active">
+            <div class="service-card-header">
+              <h3 data-i18n="services.item1Title">Detailed Assessment</h3>
+              <div class="service-arrow-btn"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="service-card-body">
+              <p data-i18n="services.item1Desc">
+                Comprehensive biometric analysis, metabolic baseline evaluation, and health biomarker profiling to pinpoint your unique physiological starting point.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 2 -->
+          <div class="service-accordion-card">
+            <div class="service-card-header">
+              <h3 data-i18n="services.item2Title">Custom Goal-Aligned Plan</h3>
+              <div class="service-arrow-btn"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="service-card-body">
+              <p data-i18n="services.item2Desc">
+                Periodized training programs and nutritional guidance engineered specifically around your recovery capacity and personal goals.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 3 -->
+          <div class="service-accordion-card">
+            <div class="service-card-header">
+              <h3 data-i18n="services.item3Title">Root Cause Lab & Biomarker Analysis</h3>
+              <div class="service-arrow-btn"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="service-card-body">
+              <p data-i18n="services.item3Desc">
+                In-depth investigation of hormonal balances, gut microbiome vitality, and micronutrient status to resolve hidden barriers to progress.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 4 -->
+          <div class="service-accordion-card">
+            <div class="service-card-header">
+              <h3 data-i18n="services.item4Title">Dedicated Coaching</h3>
+              <div class="service-arrow-btn"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="service-card-body">
+              <p data-i18n="services.item4Desc">
+                1-on-1 mentorship with certified specialists who continuously adapt your program based on live wearable feedback.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Pricing Cards Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-        
-        <!-- Plan 1: Familiar Básico -->
-        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-sky-300 transition-all">
-          <div class="space-y-6">
-            <div>
-              <span class="text-xs uppercase font-bold text-slate-500 tracking-wider">Esencial</span>
-              <h3 class="text-2xl font-bold text-slate-950 mt-1">Familiar Básico</h3>
-              <p class="text-xs text-slate-500 mt-1">Para familias que inician en el acompañamiento preventivo.</p>
-            </div>
-
-            <div>
-              <p id="price-basic" class="text-4xl font-black text-slate-950">S/ 39 <span class="text-sm font-normal text-slate-500">/mes</span></p>
-              <p class="text-xs font-semibold text-sky-600 mt-1 pricing-period">Facturación mensual</p>
-            </div>
-
-            <ul class="space-y-3 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-500"></i> Monitoreo de 1 adulto mayor</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-500"></i> Hasta 2 familiares vinculados</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-500"></i> Alertas push y SMS por caídas</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-500"></i> Modo Senior accesible</li>
-              <li class="flex items-center gap-2.5 text-slate-400"><i class="fas fa-times text-slate-300"></i> Enlace directo con ambulancias 24/7</li>
-            </ul>
-          </div>
-
-          <div class="pt-8">
-            <a href="#contacto" class="w-full inline-flex items-center justify-center py-3.5 px-4 rounded-xl text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors">
-              Elegir Plan Básico
-            </a>
-          </div>
-        </div>
-
-        <!-- Plan 2: VitaLink Pro (Destacado) -->
-        <div class="bg-white rounded-3xl p-8 pricing-card-highlight shadow-xl flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-gradient-to-l from-sky-600 to-teal-600 text-white text-[11px] font-extrabold uppercase px-4 py-1.5 rounded-bl-2xl">
-            Más Popular
-          </div>
-
-          <div class="space-y-6">
-            <div>
-              <span class="text-xs uppercase font-bold text-sky-600 tracking-wider">Cuidado Total</span>
-              <h3 class="text-2xl font-bold text-slate-950 mt-1">VitaLink Pro Familiar</h3>
-              <p class="text-xs text-slate-500 mt-1">Monitoreo continuo completo y conexión con red médica.</p>
-            </div>
-
-            <div>
-              <p id="price-pro" class="text-4xl font-black text-slate-950">S/ 79 <span class="text-sm font-normal text-slate-500">/mes</span></p>
-              <p class="text-xs font-semibold text-sky-600 mt-1 pricing-period">Facturación mensual</p>
-            </div>
-
-            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 border-t border-slate-100 pt-6 font-medium">
-              <li class="flex items-center gap-2.5"><i class="fas fa-check-circle text-sky-600"></i> Monitoreo de 1 o 2 adultos mayores</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check-circle text-sky-600"></i> Familiares ilimitados vinculados</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check-circle text-sky-600"></i> Alertas multicanal (Push, SMS, WhatsApp)</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check-circle text-sky-600"></i> Expediente clínico digital centralizado</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check-circle text-sky-600"></i> Enlace directo con red de clínicas asociadas</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check-circle text-sky-600"></i> Geocercas de seguridad en tiempo real</li>
-            </ul>
-          </div>
-
-          <div class="pt-8">
-            <a href="#contacto" class="btn-senior w-full inline-flex items-center justify-center py-4 px-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-700 hover:to-teal-700 shadow-md transition-all">
-              Comenzar con VitaLink Pro
-            </a>
-          </div>
-        </div>
-
-        <!-- Plan 3: Red de Salud B2B -->
-        <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-between border border-slate-800">
-          <div class="space-y-6">
-            <div>
-              <span class="text-xs uppercase font-bold text-teal-400 tracking-wider">Institucional B2B</span>
-              <h3 class="text-2xl font-bold text-white mt-1">Red Médica & Clínicas</h3>
-              <p class="text-xs text-slate-400 mt-1">Para hospitales, centros de salud y médicos independientes.</p>
-            </div>
-
-            <div>
-              <p id="price-clinic" class="text-4xl font-black text-white">S/ 299 <span class="text-sm font-normal text-slate-400">/mes</span></p>
-              <p class="text-xs font-semibold text-teal-400 mt-1 pricing-period">Facturación mensual</p>
-            </div>
-
-            <ul class="space-y-3 text-xs sm:text-sm text-slate-300 border-t border-slate-800 pt-6">
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400"></i> Panel de control clínico multi-paciente</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400"></i> Recepción de telemetría previa a urgencias</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400"></i> Módulo de triaje de alertas en tiempo real</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400"></i> API de integración con sistemas HIS/EHR</li>
-              <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400"></i> Soporte técnico prioritario 24/7</li>
-            </ul>
-          </div>
-
-          <div class="pt-8">
-            <a href="#contacto" class="w-full inline-flex items-center justify-center py-3.5 px-4 rounded-xl text-sm font-bold text-white bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700">
-              Solicitar Cotización B2B
-            </a>
-          </div>
-        </div>
-
+      <!-- Right Workout Media -->
+      <div class="services-right">
+        <img src="public/assets/images/workout-plank.svg" alt="Athlete training form" class="services-right-img" />
       </div>
-
     </div>
   </section>
 
-  <!-- ==========================================================================
-       STARTUP PROFILE & EQUIPO CODEBROKERS (REPORT 1.1)
-       ========================================================================== -->
-  <section id="equipo" class="py-20 lg:py-28 bg-slate-50 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Startup Mision & Vision -->
-      <div class="max-w-4xl mx-auto mb-16 text-center space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-rocket"></i> Startup Profile
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
-          Impulsado por el equipo de <span class="text-sky-600">CodeBrokers</span>
-        </h2>
-        <p class="text-base sm:text-lg text-slate-600 font-normal">
-          Desarrollamos soluciones tecnológicas centradas en el bienestar humano para transformar el cuidado de la salud en Latinoamérica.
-        </p>
-      </div>
-
-      <!-- Mision & Vision Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center text-xl">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900">Nuestra Misión</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Mejorar la calidad de vida y la seguridad de los adultos mayores mediante VitaLink, proporcionando herramientas digitales de monitoreo preventivo que permitan detectar oportunamente situaciones de riesgo, facilitar la comunicación familiar y conectar eficientemente con los servicios de salud.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl">
-            <i class="fas fa-eye"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900">Nuestra Visión</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Convertir a VitaLink en la startup referente en Latinoamérica para el monitoreo preventivo de adultos mayores, liderando la transición hacia un modelo de cuidado proactivo, conectado e impulsado por datos biométricos e inteligencia preventiva.
-          </p>
-        </div>
-      </div>
-
-      <!-- Team Members Showcase -->
-      <div class="text-center mb-8">
-        <h3 class="text-2xl font-bold text-slate-900">Integrantes del Equipo Fundador</h3>
-        <p class="text-xs text-slate-500">Estudiantes de Ingeniería de Software comprometidos con la innovación tecnológica.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        
-        <!-- Member 1: Merly Salon Puerta -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm text-center space-y-4 hover:shadow-md transition-shadow">
-          <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-sky-500 to-teal-400 p-1 mx-auto">
-            <div class="w-full h-full bg-slate-100 rounded-full flex items-center justify-center text-sky-700 text-2xl font-bold">
-              MS
-            </div>
-          </div>
-          <div>
-            <h4 class="font-bold text-base text-slate-900">Merly Salon Puerta</h4>
-            <p class="text-xs text-sky-600 font-semibold">Ingeniería de Software</p>
-            <p class="text-[11px] text-slate-400">Código: u20201b772</p>
-          </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Análisis y desarrollo de la solución, organización de actividades, documentación técnica y validación del proyecto VitaLink.
-          </p>
-          <div class="pt-2 flex justify-center gap-3 text-slate-400 text-sm">
-            <a href="#" class="hover:text-sky-600"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="hover:text-slate-900"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-
-        <!-- Member 2: Yazid Said Conde -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm text-center space-y-4 hover:shadow-md transition-shadow">
-          <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-teal-500 to-emerald-400 p-1 mx-auto">
-            <div class="w-full h-full bg-slate-100 rounded-full flex items-center justify-center text-teal-700 text-2xl font-bold">
-              YC
-            </div>
-          </div>
-          <div>
-            <h4 class="font-bold text-base text-slate-900">Yazid Said Conde</h4>
-            <p class="text-xs text-teal-600 font-semibold">Ingeniería de Software</p>
-            <p class="text-[11px] text-slate-400">Código: u202312348</p>
-          </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Implementación de funcionalidades web, resolución de desafíos de arquitectura, tecnologías frontend y backend.
-          </p>
-          <div class="pt-2 flex justify-center gap-3 text-slate-400 text-sm">
-            <a href="#" class="hover:text-teal-600"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="hover:text-slate-900"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-
-        <!-- Startup CodeBrokers Badge Card -->
-        <div class="bg-gradient-to-br from-slate-900 to-sky-950 text-white rounded-2xl p-6 shadow-sm text-center flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="w-16 h-16 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-3xl mx-auto">
-              <i class="fas fa-code"></i>
-            </div>
-            <h4 class="font-bold text-lg text-white">Startup CodeBrokers</h4>
-            <p class="text-xs text-slate-300">
-              Equipo multidisciplinario enfocado en aplicaciones web, arquitectura dirigida por el dominio (DDD) y salud preventiva.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-slate-800 text-[11px] text-sky-300 font-mono">
-            UPC 2026 • Innovación Aplicada
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       TESTIMONIOS & SOCIAL PROOF
-       ========================================================================== -->
-  <section class="py-20 bg-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-star text-amber-500"></i> Historias de Impacto
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
-          La tranquilidad que las familias estaban esperando
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Testimonial 1 -->
-        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-4 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex text-amber-400 text-xs gap-1">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="text-sm text-slate-700 italic">
-              "Mi madre de 79 años vive sola. Antes me pasaba el día con angustia llamándola a cada hora. Con VitaLink reviso su estado en 5 segundos y sé que si algo pasa, recibo una alerta inmediata."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
-            <div class="w-10 h-10 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-sm">RC</div>
-            <div>
-              <p class="font-bold text-xs text-slate-900">Ricardo Castillo</p>
-              <p class="text-[11px] text-slate-500">Familiar de usuaria en Lima</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-4 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex text-amber-400 text-xs gap-1">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="text-sm text-slate-700 italic">
-              "Como médico geriatra, contar con un expediente en tiempo real y poder recibir la telemetría antes del ingreso del paciente a emergencias nos ahorra minutos críticos en el diagnóstico."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
-            <div class="w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-sm">DF</div>
-            <div>
-              <p class="font-bold text-xs text-slate-900">Dra. Fiorella Morales</p>
-              <p class="text-[11px] text-slate-500">Especialista en Geriatría</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-4 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex text-amber-400 text-xs gap-1">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="text-sm text-slate-700 italic">
-              "Tengo 73 años y no soy muy amiga de la tecnología compleja. El Modo Senior de VitaLink es clarísimo, con botones grandes y mi botón de ayuda me da mucha seguridad."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
-            <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">EM</div>
-            <div>
-              <p class="font-bold text-xs text-slate-900">Elena Mendoza</p>
-              <p class="text-[11px] text-slate-500">Usuaria activa VitaLink</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       PREGUNTAS FRECUENTES (FAQ ACCORDION)
-       ========================================================================== -->
-  <section id="faq" class="py-20 lg:py-28 bg-slate-50 relative">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider">
-          <i class="fas fa-circle-question"></i> Resolvemos tus dudas
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
-          Preguntas Frecuentes sobre VitaLink
-        </h2>
-      </div>
-
-      <div class="space-y-4">
-        
-        <!-- FAQ 1 -->
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:text-sky-600 transition-colors">
-            <span class="text-base sm:text-lg">¿Cómo funciona la detección automática de caídas?</span>
-            <i class="faq-icon fas fa-chevron-down text-sky-600 transition-transform duration-300 flex-shrink-0"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-            VitaLink utiliza algoritmos de acelerometría y variación de altitud integrados en pulseras inteligentes o sensores asociados. Cuando se detecta un impacto seguido de inmovilidad, el sistema activa una cuenta regresiva preventiva de 15 segundos. Si el usuario no la cancela, se emite una alerta SOS inmediata a familiares y servicios de salud con la ubicación exacta.
-          </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:text-sky-600 transition-colors">
-            <span class="text-base sm:text-lg">¿Qué pasa si el adulto mayor no sabe usar teléfonos complejos?</span>
-            <i class="faq-icon fas fa-chevron-down text-sky-600 transition-transform duration-300 flex-shrink-0"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-            VitaLink fue diseñado bajo el principio <strong>Senior-First</strong>. Cuenta con una interfaz simplificada con letras extra grandes, botones con colores de alto contraste y funciones de confirmación rápida ("Estoy Bien", "Tomé mi Medicina"). Además, el monitoreo preventivo funciona de manera automática sin necesidad de que el mayor manipule el teléfono.
-          </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:text-sky-600 transition-colors">
-            <span class="text-base sm:text-lg">¿Cómo se protege la privacidad de los datos de salud?</span>
-            <i class="faq-icon fas fa-chevron-down text-sky-600 transition-transform duration-300 flex-shrink-0"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-            Toda la información médica y biométrica se almacena con cifrado de grado militar (AES-256 en reposo y TLS 1.3 en tránsito), cumpliendo con las normativas internacionales de protección de datos médicos. Solo los familiares autorizados por el titular y el personal de salud acreditado tienen acceso al expediente clínico.
-          </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:text-sky-600 transition-colors">
-            <span class="text-base sm:text-lg">¿Qué dispositivos o pulseras son compatibles con VitaLink?</span>
-            <i class="faq-icon fas fa-chevron-down text-sky-600 transition-transform duration-300 flex-shrink-0"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-            VitaLink es agnóstico al hardware: se conecta vía Bluetooth o WiFi con smartbands populares (Apple Health, Google Fit, Xiaomi Mi Band, Garmin) así como con tensiómetros digitales, oxímetros y glucómetros certificados. También ofrecemos la pulsera oficial VitaLink preconfigurada.
-          </div>
-        </div>
-
-        <!-- FAQ 5 -->
-        <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:text-sky-600 transition-colors">
-            <span class="text-base sm:text-lg">¿Cómo pueden integrarse clínicas y hospitales a la red?</span>
-            <i class="faq-icon fas fa-chevron-down text-sky-600 transition-transform duration-300 flex-shrink-0"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-            Las instituciones de salud pueden solicitar una cuenta B2B para acceder al portal clínico de gestión de telemetría y triaje. Ofrecemos APIs RESTful compatibles con estándares HL7/FHIR para sincronización con sus sistemas de historias clínicas actuales.
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       CONTACTO & FORMULARIO DE DEMOSTRACIÓN
-       ========================================================================== -->
-  <section id="contacto" class="py-20 lg:py-28 bg-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-sky-950 rounded-3xl p-8 sm:p-12 lg:p-16 text-white shadow-2xl border border-sky-900/40 relative overflow-hidden">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <!-- Left Info -->
-          <div class="lg:col-span-6 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs font-bold uppercase tracking-wider">
-              <i class="fas fa-headset"></i> Atención Personalizada
-            </div>
-            
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-              Comienza hoy a proteger a quienes más amas
-            </h2>
-            
-            <p class="text-slate-300 text-base leading-relaxed">
-              Completa el formulario para agendar una demostración en vivo guiada por nuestros especialistas o solicitar información sobre planes familiares y convenios médicos con <strong>CodeBrokers</strong>.
-            </p>
-
-            <div class="space-y-4 text-sm text-slate-300 pt-2">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div>
-                  <p class="text-xs text-slate-400">Contacto Directo</p>
-                  <p class="font-bold text-white">contacto@vitalink-health.com</p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center">
-                  <i class="fas fa-location-dot"></i>
-                </div>
-                <div>
-                  <p class="text-xs text-slate-400">Ubicación</p>
-                  <p class="font-bold text-white">Lima, Perú • Startup CodeBrokers</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Form -->
-          <div class="lg:col-span-6">
-            <div class="bg-white text-slate-900 rounded-2xl p-6 sm:p-8 shadow-xl">
-              <h3 class="text-xl font-bold text-slate-900 mb-1">Solicitar Demostración o Asesoría</h3>
-              <p class="text-xs text-slate-500 mb-6">Te responderemos en menos de 2 horas hábiles.</p>
-
-              <form id="demo-contact-form" class="space-y-4">
-                
-                <div>
-                  <label for="form-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo *</label>
-                  <input type="text" id="form-name" required placeholder="Ej. Juan Pérez" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none text-sm transition-all" />
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label for="form-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico *</label>
-                    <input type="email" id="form-email" required placeholder="juan@ejemplo.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none text-sm transition-all" />
-                  </div>
-                  <div>
-                    <label for="form-phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Teléfono / WhatsApp</label>
-                    <input type="tel" id="form-phone" placeholder="+51 987 654 321" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none text-sm transition-all" />
-                  </div>
-                </div>
-
-                <div>
-                  <label for="form-role" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Me interesa como:</label>
-                  <select id="form-role" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none text-sm bg-white transition-all">
-                    <option value="Familiar de adulto mayor">Familiar / Cuidador de adulto mayor</option>
-                    <option value="Adulto mayor">Adulto Mayor (Usuario directo)</option>
-                    <option value="Clínica / Hospital / Médico">Clínica / Centro de Salud / Médico (B2B)</option>
-                    <option value="Distribuidor / Alianza">Distribuidor o Alianza Estratégica</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label for="form-msg" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Mensaje o Consulta (Opcional)</label>
-                  <textarea id="form-msg" rows="3" placeholder="Cuéntanos brevemente cómo podemos ayudarte..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none text-sm transition-all"></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-4 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-700 hover:to-teal-700 shadow-md hover:shadow-lg transition-all text-sm flex items-center justify-center gap-2">
-                  <i class="fas fa-paper-plane"></i>
-                  <span>Enviar Solicitud</span>
-                </button>
-
-                <p class="text-[11px] text-slate-400 text-center">
-                  Al enviar, aceptas nuestras políticas de privacidad y protección de datos médicos.
-                </p>
-
-              </form>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       MODAL DE CONFIRMACIÓN DE ENVÍO
-       ========================================================================== -->
-  <div id="modal-feedback" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl space-y-4 border border-slate-100 animate-scale-up">
-      <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
-        <i class="fas fa-check-circle"></i>
-      </div>
-      <h3 id="modal-feedback-title" class="text-2xl font-black text-slate-900">¡Solicitud Recibida!</h3>
-      <p id="modal-feedback-msg" class="text-sm text-slate-600 leading-relaxed">
-        Un asesor especializado de CodeBrokers se pondrá en contacto contigo a la brevedad para coordinar la demo de VitaLink.
+  <!-- ================= How PulsePower Works (5 Steps) ================= -->
+  <section class="steps-section" id="steps">
+    <div class="steps-header">
+      <h2 class="section-title-large" data-i18n="steps.title">How PulsePower Works</h2>
+      <p class="section-desc-medium" data-i18n="steps.subtitle">
+        Understand your body through a connected experience. From setting your goals to tracking your progress, PulsePower turns your sleep, strain and recovery data into personalized guidance for your daily routine.
       </p>
-      <button id="modal-feedback-close" class="w-full py-3 px-6 rounded-xl font-bold text-white bg-sky-600 hover:bg-sky-700 transition-colors text-sm">
-        Entendido, gracias
-      </button>
     </div>
-  </div>
 
-  <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
-  <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-        
-        <!-- Col 1: Brand & Bio -->
-        <div class="lg:col-span-2 space-y-4">
-          <img src="assets/logo.svg" alt="VitaLink Logo" class="h-9 w-auto brightness-0 invert" />
-          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-            VitaLink es el ecosistema digital de monitoreo preventivo y acompañamiento que conecta a adultos mayores, familias y centros de salud. Desarrollado por la startup <strong>CodeBrokers</strong>.
+    <div class="steps-grid">
+      <!-- Step 01 -->
+      <div class="step-card step-card-01">
+        <div class="step-top-arch">
+          <div class="step-number-bubble">01</div>
+          <img src="public/assets/images/step-01.svg" alt="Set Your Goals" class="step-illustration" />
+        </div>
+        <div class="step-content">
+          <h3 data-i18n="steps.step1Title">Set Your Goals</h3>
+          <p data-i18n="steps.step1Desc">
+            Create your profile and tell us about your training, sleep habits and wellbeing goals. PulsePower uses this information to personalize your experience.
           </p>
-          <div class="flex items-center gap-3 pt-2 text-slate-300">
-            <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 hover:bg-sky-600 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-linkedin-in text-xs"></i></a>
-            <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 hover:bg-slate-800 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-github text-xs"></i></a>
-            <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 hover:bg-rose-600 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-instagram text-xs"></i></a>
-          </div>
         </div>
-
-        <!-- Col 2: Solución -->
-        <div class="space-y-3">
-          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Solución</h4>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#funcionalidades" class="hover:text-white transition-colors">Monitoreo Preventivo</a></li>
-            <li><a href="#funcionalidades" class="hover:text-white transition-colors">Detección de Caídas</a></li>
-            <li><a href="#funcionalidades" class="hover:text-white transition-colors">Expediente Clínico</a></li>
-            <li><a href="#simulador" class="hover:text-white transition-colors">Modo Senior Accesible</a></li>
-            <li><a href="#segmentos" class="hover:text-white transition-colors">Red de Salud B2B</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Empresa -->
-        <div class="space-y-3">
-          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Startup</h4>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#equipo" class="hover:text-white transition-colors">Sobre CodeBrokers</a></li>
-            <li><a href="#equipo" class="hover:text-white transition-colors">Misión y Visión</a></li>
-            <li><a href="#equipo" class="hover:text-white transition-colors">Equipo Fundador</a></li>
-            <li><a href="#planes" class="hover:text-white transition-colors">Planes y Precios</a></li>
-            <li><a href="#contacto" class="hover:text-white transition-colors">Contacto Oficial</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Seguridad & Legal -->
-        <div class="space-y-3">
-          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Seguridad</h4>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#" class="hover:text-white transition-colors">Privacidad de Datos Médicos</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Términos de Servicio</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Cifrado AES-256</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Accesibilidad WCAG 2.1</a></li>
-          </ul>
-        </div>
-
       </div>
 
-      <!-- Bottom Credits -->
-      <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© 2026 VitaLink by CodeBrokers. Todos los derechos reservados.</p>
-        <p class="flex items-center gap-2">
-          <span>Diseñado con pasión por la salud preventiva</span>
-          <span class="text-rose-500">❤️</span>
+      <!-- Step 02 -->
+      <div class="step-card step-card-02">
+        <div class="step-top-arch">
+          <div class="step-number-bubble">02</div>
+          <img src="public/assets/images/step-02.svg" alt="Connect Your Wearable" class="step-illustration" />
+        </div>
+        <div class="step-content">
+          <h3 data-i18n="steps.step2Title">Connect Your Wearable</h3>
+          <p data-i18n="steps.step2Desc">
+            Link your compatible wristband to sync your physiological data. Bring your sleep, strain and recovery records together in one place.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="step-card step-card-03">
+        <div class="step-top-arch">
+          <div class="step-number-bubble">03</div>
+          <img src="public/assets/images/step-03.svg" alt="Understand Your Body" class="step-illustration" />
+        </div>
+        <div class="step-content">
+          <h3 data-i18n="steps.step3Title">Understand Your Body</h3>
+          <p data-i18n="steps.step3Desc">
+            Explore your daily indicators through clear summaries. Ask the AI assistant to explain your data and help you understand your patterns.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="step-card step-card-04">
+        <div class="step-top-arch">
+          <div class="step-number-bubble">04</div>
+          <img src="public/assets/images/step-04.svg" alt="Plan Your Daily Routine" class="step-illustration" />
+        </div>
+        <div class="step-content">
+          <h3 data-i18n="steps.step4Title">Plan Your Daily Routine</h3>
+          <p data-i18n="steps.step4Desc">
+            Receive personalized suggestions based on your recent data and goals. Use these insights to review your training intensity, rest periods and sleep habits.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 05 -->
+      <div class="step-card step-card-05">
+        <div class="step-top-arch">
+          <div class="step-number-bubble">05</div>
+          <img src="public/assets/images/step-05.svg" alt="Track Your Progress" class="step-illustration" />
+        </div>
+        <div class="step-content">
+          <h3 data-i18n="steps.step5Title">Track Your Progress</h3>
+          <p data-i18n="steps.step5Desc">
+            Review your trends and progress reports over time. Recognize changes in your habits and adjust your routine as your needs evolve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Mid CTA Banner ================= -->
+  <section class="cta-banner-section">
+    <div class="cta-banner-box">
+      <h2 data-i18n="ctaBanner.title">Your Transformation Starts Now</h2>
+      <p data-i18n="ctaBanner.subtitle">
+        Your body speaks every day. Our platform translates it. Discover how your sleep, strain and recovery data can help you plan your activities with greater clarity.
+      </p>
+      <a href="#plans" class="btn-primary">
+        <span data-i18n="ctaBanner.btn">Book Your Free Consult</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= Dark Video Feature Section ================= -->
+  <section class="video-section-dark" id="features">
+    <div class="video-section-header">
+      <h2 data-i18n="videoSection.title">How PulsePower Works</h2>
+    </div>
+
+    <div class="video-grid">
+      <!-- Video Player -->
+      <div class="video-player-container">
+        <iframe
+          id="pulsepower-video-frame"
+          src="https://www.youtube.com/embed/5qap5aO4i9A?si=pulsepower"
+          title="PulsePower Platform Overview"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Interactive Feature Tabs -->
+      <div class="video-tabs-list">
+        <div class="video-feature-tab active" data-tab="tab1">
+          <h3 data-i18n="videoSection.tab1">Physiological Monitoring</h3>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="video-feature-tab" data-tab="tab2">
+          <h3 data-i18n="videoSection.tab2">Sleep & Recovery</h3>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="video-feature-tab" data-tab="tab3">
+          <h3 data-i18n="videoSection.tab3">AI Recommendations</h3>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="video-feature-tab" data-tab="tab4">
+          <h3 data-i18n="videoSection.tab4">Progress Reports</h3>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="video-active-desc-box">
+          <p id="video-feature-desc" data-i18n="videoSection.tab1Desc">
+            Continuous real-time tracking of heart rate variability, skin temperature, and daily strain metrics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Our Team Section ================= -->
+  <section class="team-section" id="team">
+    <div class="team-header">
+      <h2 data-i18n="team.heading">Our Team</h2>
+    </div>
+
+    <div class="team-cards-grid">
+      <!-- Member 1: Luis -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <img src="public/assets/images/team-luis.svg" alt="Luis Angel Cisneros Salas" />
+        </div>
+        <h3 data-i18n="team.member1Name">Luis Angel Cisneros Salas</h3>
+        <p class="team-role" data-i18n="team.role">Software Engineering Student</p>
+        <p class="team-bio" data-i18n="team.member1Desc">
+          Software Engineering student at UPC. Full Stack developer with experience in Spring Boot, Angular, Vue.js and Python, plus a background in QA Automation.
         </p>
       </div>
 
+      <!-- Member 2: Miroslav -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <img src="public/assets/images/team-miroslav.svg" alt="Miroslav Oscar Manosalva Tovar" />
+        </div>
+        <h3 data-i18n="team.member2Name">Miroslav Oscar Manosalva Tovar</h3>
+        <p class="team-role" data-i18n="team.role">Software Engineering Student</p>
+        <p class="team-bio" data-i18n="team.member2Desc">
+          I have programming knowledge and experience designing user interfaces. I consider myself a responsible and persistent person.
+        </p>
+      </div>
+
+      <!-- Member 3: Bruno -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <img src="public/assets/images/team-bruno.svg" alt="Bruno Rodrigo Montalvo Vásquez" />
+        </div>
+        <h3 data-i18n="team.member3Name">Bruno Rodrigo Montalvo Vásquez</h3>
+        <p class="team-role" data-i18n="team.role">Software Engineering Student</p>
+        <p class="team-bio" data-i18n="team.member3Desc">
+          22 years old. Calm, collaborative and adaptable. Enjoys teamwork and uses C++ and Python knowledge to find efficient solutions.
+        </p>
+      </div>
+
+      <!-- Member 4: Deiby -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <img src="public/assets/images/team-deiby.svg" alt="Deiby Juan Vargas Manchinelli" />
+        </div>
+        <h3 data-i18n="team.member4Name">Deiby Juan Vargas Manchinelli</h3>
+        <p class="team-role" data-i18n="team.role">Software Engineering Student</p>
+        <p class="team-bio" data-i18n="team.member4Desc">
+          Software Engineering student interested in creating functional and enjoyable digital experiences. Has knowledge of C++, HTML and CSS.
+        </p>
+      </div>
+
+      <!-- Member 5: Marlon -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <img src="public/assets/images/qualitrack-team-member-marlon-icon.jpg" alt="Marlon Packard Viza Quispe" />
+        </div>
+        <h3 data-i18n="team.member5Name">Marlon Packard Viza Quispe</h3>
+        <p class="team-role" data-i18n="team.role">Software Engineering Student</p>
+        <p class="team-bio" data-i18n="team.member5Desc">
+          20 years old. Responsible and proactive student with knowledge of C++. Contributes creative solutions and is committed to continuous learning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Plans & Pricing Section ================= -->
+  <section class="plans-section" id="plans">
+    <div class="plans-header">
+      <h2 data-i18n="plans.heading">A Plan for Your Wellbeing</h2>
+      <p data-i18n="plans.subtitle">Choose how you explore your sleep, strain and recovery.</p>
+    </div>
+
+    <!-- Toggle Pill -->
+    <div class="plan-toggle-container">
+      <button class="plan-toggle-btn active" data-plan="monthly" data-i18n="plans.monthly">Monthly</button>
+      <button class="plan-toggle-btn" data-plan="annual" data-i18n="plans.annual">Annual</button>
+    </div>
+
+    <div class="plans-grid">
+      <!-- Basic Plan -->
+      <div class="pricing-card pricing-card-basic">
+        <div class="pricing-card-header">
+          <h3 data-i18n="plans.basicTitle">Basic</h3>
+          <p class="pricing-sub" data-i18n="plans.basicSub">Your daily insights in one place</p>
+        </div>
+
+        <div class="pricing-price-wrap">
+          <div class="price-monthly">
+            <span class="pricing-price" data-i18n="plans.basicPriceMonthly">$19</span>
+            <span class="pricing-unit" data-i18n="plans.basicPriceMonthlyUnit">/per month</span>
+          </div>
+          <div class="price-annual" style="display: none;">
+            <span class="pricing-price" data-i18n="plans.basicPriceAnnual">$180</span>
+            <span class="pricing-unit" data-i18n="plans.basicPriceAnnualUnit">/per year</span>
+            <div class="annual-save-badge" data-i18n="plans.save">Save 20% annually</div>
+          </div>
+        </div>
+
+        <div class="pricing-features-box">
+          <ul class="pricing-features-list">
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.basicF1">Health dashboard</span>
+            </li>
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.basicF2">Daily summary</span>
+            </li>
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.basicF3">Sleep tracking</span>
+            </li>
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.basicF4">Your profile</span>
+            </li>
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.basicF5">Help & support</span>
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn-pricing btn-pricing-basic" data-i18n="plans.basicCta">Select Basic</button>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="pricing-card pricing-card-pro">
+        <div class="pro-badge" data-i18n="plans.proBadge">Advanced</div>
+
+        <div class="pricing-card-header">
+          <h3 data-i18n="plans.proTitle">Pro</h3>
+          <p class="pricing-sub" data-i18n="plans.proSub">Guidance tailored to your routine</p>
+        </div>
+
+        <div class="pricing-price-wrap">
+          <div class="price-monthly">
+            <span class="pricing-price" data-i18n="plans.proPriceMonthly">$49</span>
+            <span class="pricing-unit" data-i18n="plans.proPriceMonthlyUnit">/per month</span>
+          </div>
+          <div class="price-annual" style="display: none;">
+            <span class="pricing-price" data-i18n="plans.proPriceAnnual">$470</span>
+            <span class="pricing-unit" data-i18n="plans.proPriceAnnualUnit">/per year</span>
+            <div class="annual-save-badge" data-i18n="plans.save">Save 20% annually</div>
+          </div>
+        </div>
+
+        <div class="pricing-features-box">
+          <ul class="pricing-features-list">
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.proF1">Everything in Basic</span>
+            </li>
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.proF2">AI assistant</span>
+            </li>
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.proF3">Progress reports</span>
+            </li>
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.proF4">Personalized guidance</span>
+            </li>
+            <li>
+              <div class="pricing-check-icon"><i class="fas fa-check"></i></div>
+              <span data-i18n="plans.proF5">Extended history</span>
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn-pricing btn-pricing-pro" data-i18n="plans.proCta">Choose Pro</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Overview & Secondary Video Section ================= -->
+  <section class="overview-section" id="about">
+    <div class="overview-grid">
+      <!-- Left Info -->
+      <div class="overview-left">
+        <h2 class="overview-title" data-i18n="overview.title">
+          PulsePower: Understand Your Body, Support Your Wellbeing
+        </h2>
+        <p class="overview-desc" data-i18n="overview.desc">
+          PulsePower is a physiological intelligence platform that interprets data from a connected wearable. It brings together sleep, strain and recovery information to offer clear explanations and personalized recommendations. Built for regular exercisers and people seeking better rest, it helps users understand their patterns and make everyday wellbeing decisions based on their history and goals.
+        </p>
+
+        <div class="overview-points">
+          <div class="overview-point-item">
+            <i class="fas fa-circle-check overview-point-bullet"></i>
+            <span data-i18n="overview.point1">Integrated monitoring: review your sleep, strain and recovery records in a single platform.</span>
+          </div>
+          <div class="overview-point-item">
+            <i class="fas fa-circle-check overview-point-bullet"></i>
+            <span data-i18n="overview.point2">Personalized guidance: connect your indicators to your goals and explore your data with an AI assistant.</span>
+          </div>
+          <div class="overview-point-item">
+            <i class="fas fa-circle-check overview-point-bullet"></i>
+            <span data-i18n="overview.point3">Habit tracking: review trends and reports to understand how your activity and rest evolve.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Video -->
+      <div class="overview-right">
+        <div class="video-player-container">
+          <iframe
+            src="https://www.youtube.com/embed/vu7Rlkn2lEc?si=pulsepower"
+            title="PulsePower Wellbeing Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Footer Section ================= -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="public/assets/images/pulsepower-logo.svg" alt="PulsePower Logo" style="height: 48px; width: auto;" />
+        <p data-i18n="footer.tagline">
+          PulsePower turns your sleep, strain and recovery records into clear insights to support your everyday wellbeing.
+        </p>
+      </div>
+
+      <div class="footer-social-links">
+        <a href="#" class="social-circle-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-circle-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-circle-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-circle-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <h4 data-i18n="footer.servicesTitle">Services</h4>
+        <ul>
+          <li><a href="#services" data-i18n="footer.s1">Recovery insights</a></li>
+          <li><a href="#services" data-i18n="footer.s2">Sleep quality</a></li>
+          <li><a href="#services" data-i18n="footer.s3">Daily strain</a></li>
+          <li><a href="#features" data-i18n="footer.s4">AI assistant</a></li>
+          <li><a href="#features" data-i18n="footer.s5">Progress reports</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.resourcesTitle">Resources</h4>
+        <ul>
+          <li><a href="#about" data-i18n="footer.r1">Help center</a></li>
+          <li><a href="#steps" data-i18n="footer.r2">Getting started</a></li>
+          <li><a href="#plans" data-i18n="footer.r3">Available plans</a></li>
+          <li><a href="#about" data-i18n="footer.r4">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.companyTitle">Company</h4>
+        <ul>
+          <li><a href="#team" data-i18n="footer.c1">Our team</a></li>
+          <li><a href="#about" data-i18n="footer.c2">Our mission</a></li>
+          <li><a href="mailto:support@pulsepower.io" data-i18n="footer.c3">Contact us</a></li>
+          <li><a href="#about" data-i18n="footer.c4">About the product</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">© 2026 PulsePower. Academic project.</p>
+      <div class="footer-legal-links">
+        <a href="public/sections/tos.html" target="_blank" data-i18n="footer.terms">Terms of Service</a>
+        <a href="public/sections/policies.html" target="_blank" data-i18n="footer.privacy">Privacy Policy</a>
+      </div>
     </div>
   </footer>
 
+  <!-- ================= Floating Language Switcher ================= -->
+  <div class="floating-lang-switcher">
+    <button class="floating-lang-btn" data-lang="en">EN</button>
+    <button class="floating-lang-btn active" data-lang="es">ES</button>
+  </div>
+
   <!-- Scripts -->
-  <script src="app.js"></script>
+  <script src="public/assets/scripts/translations/en.js"></script>
+  <script src="public/assets/scripts/translations/es.js"></script>
+  <script src="public/assets/scripts/main.js"></script>
 </body>
 </html>

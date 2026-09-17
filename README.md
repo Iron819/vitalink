@@ -1,81 +1,84 @@
-# 🏥 VitaLink — Landing Page Oficial
+# PulsePower – Physiological Intelligence & Wellness Platform
 
-> **Ecosistema de Monitoreo Preventivo & Cuidado Integral para Adultos Mayores**  
-> Desarrollado por la startup **CodeBrokers**
+## Project Overview
 
-![VitaLink Status](https://img.shields.io/badge/Status-Completado%20%26%20Listo-success)
-![Versión](https://img.shields.io/badge/Versi%C3%B3n-1.0.0-blue)
-![Licencia](https://img.shields.io/badge/Licencia-MIT-green)
+**PulsePower** is a next-generation health, strain, and recovery intelligence platform that bridges connected wearables with AI-powered personalized guidance. 
 
----
-
-## 📖 Descripción del Proyecto
-
-**VitaLink** es una plataforma digital de salud preventiva y acompañamiento continuo que conecta en un mismo ecosistema a:
-1. **Adultos Mayores (Senior First):** Brindando seguridad, botón SOS de 1 toque, recordatorios amigables y fomento de su autonomía en el hogar.
-2. **Familiares y Cuidadores:** Visualización en tiempo real de signos vitales, detección temprana de anomalías o caídas y eliminación de la incertidumbre.
-3. **Clínicas, Hospitales y Profesionales de Salud (B2B):** Canal digital para recepción de alertas de emergencia con telemetría previa para agilizar el triaje y la atención médica.
-
-Esta Landing Page fue construida desde cero como un repositorio independiente y limpio en base a la investigación y especificaciones del reporte de la startup CodeBrokers.
+The platform continuously interprets physiological data—including heart rate variability (HRV), sleep architecture, body temperature, and exertion metrics—translating raw biometric telemetry into actionable recommendations for regular exercisers and people seeking optimized everyday wellbeing.
 
 ---
 
-## ✨ Características y Secciones de la Landing Page
+## Key Features
 
-- 🚀 **Hero Section de Alto Impacto:** Propuesta de valor, llamadas a la acción y tarjeta de telemetría de paciente con gráfica de ritmo cardíaco (ECG) animada.
-- 📊 **Contadores de Impacto Animados:** Reducción de tiempo de respuesta (-68%), precisión en alertas (99.4%) y métricas clave de salud preventiva.
-- ⚖️ **Problemática vs Solución:** Comparativa visual detallada entre el modelo tradicional reactivo y el ecosistema proactivo de VitaLink (metodología 5W2H & Lean UX).
-- 💎 **6 Pilares de la Solución:** Monitoreo preventivo 24/7, detección de caídas y alertas inteligentes, expediente clínico digital unificado, red de enlace hospitalario, modo senior accesible y gestor de medicación.
-- 🎮 **Simulador Interactivo en Vivo:**
-  - **Selector de 3 Roles:** *Vista Familiar (Dashboard)*, *Vista Adulto Mayor (Modo Simple)* y *Vista Red Médica/Clínica (Portal B2B)*.
-  - **Detonador de Escenarios en Tiempo Real:** Simulación de ritmo normal, alerta de taquicardia/presión alta, emergencia por caída con impacto SOS y confirmación de toma de medicamentos.
-- 👥 **Segmentos Objetivo:** Enfoque para familias/adultos mayores (B2C) y prestadores de salud (B2B).
-- 🏷️ **Planes y Precios Transparentes:** Toggle interactivo Mensual / Anual con cálculo automático de 20% de descuento.
-- 👨‍💻 **Startup Profile & Equipo CodeBrokers:** Misión, Visión y presentación del equipo fundador (Merly Salon Puerta, Yazid Said Conde).
-- 🌟 **Testimonios y Validación:** Historias de impacto de familiares, especialistas médicos y adultos mayores.
-- ❓ **Preguntas Frecuentes (FAQ Accordion):** Respuestas a dudas técnicas, compatibilidad de dispositivos y privacidad médica.
-- 📝 **Formulario de Contacto & Demostración:** Formulario interactivo con validación, estados de carga y modal de confirmación.
-- 👁️ **Modo Senior (Accesibilidad WCAG 2.1):** Botón accesible en el navbar que amplía dinámicamente la tipografía, incrementa el contraste y maximiza los elementos táctiles.
+- **Physiological Monitoring:** Real-time synchronization and tracking of recovery status, heart rate variability, skin temperature, and daily strain index.
+- **Sleep & Recovery Architecture:** Fine-grained analysis of deep, REM, and light sleep cycles, combined with circadian rhythm alignment.
+- **AI-Powered Recommendations:** Dynamic training and rest recommendations calibrated to personal baseline limits and current physiological recovery capacity.
+- **Science-Backed Coaching Services:** Detailed biometric assessments, periodized goal-aligned training routines, and root cause biomarker analysis.
+- **Progress Tracking & Longitudinal Analytics:** Trend reporting across weeks and months, allowing users to adapt habits as their physiology evolves.
+- **Internationalization (i18n):** Full bilingual support for **English (EN)** and **Spanish (ES)** via `data-i18n` attribute binding, featuring synchronized navbar and floating switches.
+- **Responsive Architecture:** Pixel-perfect adaptive layout supporting mobile devices, tablets, laptops, and ultra-wide displays (Figma 1440px+ specification).
 
 ---
 
-## 📁 Estructura del Repositorio
+## Subscription Plans
+
+| Plan | Monthly | Annual (Save 20%) | Best For | Key Features |
+|---|---|---|---|---|
+| **Basic** | $19 / mo | $180 / yr | Regular fitness enthusiasts | Health dashboard, daily summary, sleep tracking, personal profile, support |
+| **Pro (Advanced)** | $49 / mo | $470 / yr | Athletes, coaches & advanced wellness | Everything in Basic, AI assistant, progress reports, personalized guidance, extended history |
+
+---
+
+## Technologies Used
+
+This Landing Page is engineered with clean, modular web standards prioritizing performance, accessibility, and responsiveness:
+
+- **HTML5** — Semantic, accessible document structure.
+- **CSS3** — Custom properties, Flexbox, CSS Grid, and animations based on Figma specs.
+- **Vanilla JavaScript (ES6+)** — Modular language controller, accordion interactions, video tabs, and pricing toggler.
+- **SVG & Optimized Imagery** — Crisp vector illustrations, badges, and responsive imagery.
+- **Google Fonts** — `'Rubik'`, `'Work Sans'`, `'Montserrat'`, `'Audiowide'`, `'Poppins'`, `'Inter'`.
+- **Font Awesome 6** — Modern scalable vector iconography.
+
+---
+
+## Project Structure
 
 ```
 vitalink/
-├── index.html          # Estructura semántica HTML5, Tailwind CSS y componentes
-├── styles.css          # Estilos personalizados, animaciones ECG, glassmorphism y Modo Senior
-├── app.js              # Lógica interactiva (Simulador, roles, accesibilidad, precios y FAQ)
-├── assets/
-│   ├── logo.svg        # Logotipo vectorizado de VitaLink
-│   └── favicon.svg     # Favicon oficial
-└── README.md           # Documentación técnica y guía de uso
+├── index.html                         # Main landing page entry point
+├── README.md                          # Project documentation
+├── public/
+│   ├── assets/
+│   │   ├── styles/
+│   │   │   └── style.css              # Master stylesheet matching Figma CSS
+│   │   ├── scripts/
+│   │   │   ├── main.js                # i18n controller, navbar toggle, accordions, tabs
+│   │   │   └── translations/
+│   │   │       ├── en.js              # English dictionary (translationsEN)
+│   │   │       └── es.js              # Spanish dictionary (translationsES)
+│   │   └── images/                    # Brand logo, step SVGs, athlete illustrations, team avatars
+│   └── sections/
+│       ├── tos.html                   # Terms of Service legal page
+│       └── policies.html              # Privacy Policy legal page
 ```
 
 ---
 
-## 🚀 Cómo Visualizar y Ejecutar el Proyecto
+## Team Members
 
-### Opción 1: Abrir directamente en el navegador
-Puedes hacer doble clic en el archivo `index.html` en el explorador de archivos de Windows o arrastrarlo a cualquier navegador web (Chrome, Edge, Firefox, etc.).
+| Name | Role | Focus / Background |
+|---|---|---|
+| **Luis Angel Cisneros Salas** | Software Engineering Student | Full Stack Developer (Spring Boot, Angular, Vue.js, Python, QA Automation) |
+| **Miroslav Oscar Manosalva Tovar** | Software Engineering Student | User Interface (UI) Design & Web Application Development |
+| **Bruno Rodrigo Montalvo Vásquez** | Software Engineering Student | Systems & Algorithmic Solutions (C++, Python) |
+| **Deiby Juan Vargas Manchinelli** | Software Engineering Student | Frontend & Digital Experience Design (C++, HTML, CSS) |
+| **Marlon Packard Viza Quispe** | Software Engineering Student | Software Development & Continuous Learning (C++) |
 
-### Opción 2: Servidor local con Python (Recomendado)
-Abre una terminal en la carpeta del proyecto y ejecuta:
-```bash
-python -m http.server 3000
-```
-Luego abre tu navegador en `http://localhost:3000`.
-
----
-
-## 🌐 Opciones de Despliegue
-
-La landing page es 100% estática y ligera (cero dependencias de servidor):
-- **GitHub Pages:** Sube los archivos a tu repositorio en GitHub y activa GitHub Pages en `Settings > Pages > Branch: main`.
-- **Vercel / Netlify:** Conecta el repositorio de GitHub y se desplegará automáticamente con 1 solo clic.
+> Software Engineering students at **Universidad Peruana de Ciencias Aplicadas (UPC)**.
 
 ---
 
-## 👨‍💻 Desarrollado por
-**Startup CodeBrokers**  
-*Proyecto VitaLink — Conectando el cuidado, protegiendo vidas.*
+## Copyright
+
+© 2026 PulsePower. Academic project. All rights reserved.
